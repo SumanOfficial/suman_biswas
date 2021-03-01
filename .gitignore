@@ -1,0 +1,12 @@
+# Ignore this files
+node_modules
+vendor
+build/*
+bundled/*
+!build/.gitkeep
+
+template/css/
+template/css/*
+
+template/js
+template/js/*

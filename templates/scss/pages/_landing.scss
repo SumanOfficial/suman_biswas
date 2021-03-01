@@ -1,0 +1,45 @@
+@import "./vendors/vendors";
+@import "./helpers/variables";
+@import "./base/base";
+@import "./helpers/helpers";
+@import "./helpers/mixins";
+@import "../components/hamburgar";
+@import "../components/navbar";
+
+#hero {
+  background-color: $black;
+  height: 100vh;
+  text-align: center;
+
+  .profile-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .profile-ring {
+      width: 300px;
+      height: 300px;
+      border: 8px solid $blue;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .intro {
+    // width: 300px;
+
+    .hero-phone {
+      padding: 15px;
+      border-radius: 10px;
+      background-color: $grey-text;
+    }
+  }
+  .block {
+    background: transparent !important;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    right: 0%;
+    z-index: 9999;
+  }
+}
