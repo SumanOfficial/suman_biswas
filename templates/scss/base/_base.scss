@@ -1,15 +1,23 @@
 @import "../vendors/vendors";
 body {
-  background-color: $dark;
+  background-color: $white;
   font-family: "Poppins", sans-serif;
-  color: $white;
 }
 h1 {
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: bold;
 }
-// h6 {
-//   font-size: 16px;
-// }
 h5 {
   color: $blue;
+}
+
+p {
+  color: $dark;
+  font-size: 18px;
+}
+.logo {
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  margin-top: 30px;
 }
