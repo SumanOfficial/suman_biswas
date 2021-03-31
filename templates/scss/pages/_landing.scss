@@ -1,10 +1,12 @@
 @import "./vendors/vendors";
 @import "./helpers/variables";
+@import "./helpers/mixins";
 @import "./base/base";
 @import "./helpers/helpers";
-@import "./helpers/mixins";
+
 @import "../components/hamburgar";
 @import "../components/navbar";
+@import "../components/imgHover";
 
 #hero {
   .block {
@@ -29,12 +31,39 @@
   }
 
   .hero-content {
-    margin-top: 100px;
+    @include lg {
+      margin-top: 80px;
+    }
+    @include md {
+      margin-top: 50px;
+      text-align: center;
+      padding: 0 50px;
+    }
+    @include sm {
+      margin-top: 0px;
+      // text-align: center;
+      padding: 0 50px;
+    }
+    .hero-text {
+      margin-top: 100px;
+    }
     .hero-img {
       img {
-        margin-top: 50px;
+        // margin-top: 50px;
         width: 100%;
         height: auto;
+        @include md {
+          padding: 50px;
+          margin-top: 0;
+        }
+        @include sm {
+          padding: 20px;
+          margin-top: 20px;
+        }
+        @include xs {
+          padding: 15px;
+          margin-top: 20px;
+        }
       }
     }
     .quick-contact {
@@ -42,14 +71,117 @@
       img {
         width: 40px;
         height: 40px;
-        margin-right: 10px;
+        margin-right: 20px;
+        transition: 0.2s all;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+#about {
+  margin-top: 200px;
+  background-color: $red;
+  padding: 100px 0;
+  @include sm {
+    padding: 100px 20px;
+  }
+  @include md {
+    margin-top: 50px;
+  }
+  .about-vector {
+    width: 100%;
+    height: auto;
+    @include md {
+      padding: 50px;
+    }
+  }
+  .about-text {
+    h1 {
+      color: $dark;
+    }
+    h5 {
+      color: $yellow;
+    }
+    .cv {
+      color: $dark;
+      transition: 0.2s all;
+      @include sm {
+        // padding: 20px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        margin-left: 10px;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+#edu {
+  margin-top: 200px;
+  @include md {
+    margin-top: 100px;
+    text-align: center;
+  }
+  .edu-vector {
+    width: 100%;
+    height: auto;
+  }
+  .education {
+    border-radius: 10px;
+    margin-top: 50px;
+    background-color: $white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    height: 350px;
+    @include md {
+      height: auto;
+    }
+
+    .edu-yr {
+      font-size: 16px;
+    }
+    .edu-name {
+      font-weight: bold;
+      color: $dark;
+    }
+    .edu-uni {
+      color: $grey;
+      font-size: 16px;
+    }
+    .edu-info {
+      font-size: 18px;
+      color: $dark;
+      @include lg {
+        font-size: 16px;
       }
     }
   }
 }
 
 #services {
-  margin-top: 250px;
+  margin-top: 200px;
+  padding: 100px 0;
+  background-color: $red;
+  h5 {
+    color: $yellow;
+  }
+  h1 {
+    color: $dark;
+  }
+  @include md {
+    margin-top: 100px;
+    text-align: center;
+  }
   .service-vector {
     width: 270px;
     height: 175px;
@@ -63,110 +195,93 @@
     text-align: center;
     border-radius: 10px;
 
+    @include lg {
+      padding: 40px;
+      height: 200px;
+    }
+    @include sm {
+      margin-top: 30px;
+      // padding: 40px;
+      // height: 200px;
+    }
+
     img {
       width: 50px;
       height: 50px;
     }
+    h6 {
+      color: $dark;
+    }
     h5 {
       margin-top: 10px;
-    }
-  }
-}
-
-#about {
-  margin-top: 250px;
-  .about-vector {
-    width: 100%;
-    height: auto;
-  }
-  .about-text {
-    padding: 70px;
-    .cv {
-      color: $blue;
-      img {
-        width: 40px;
-        height: 40px;
-        margin-left: 10px;
-      }
-    }
-  }
-}
-
-#edu {
-  margin-top: 200px;
-  .edu-vector {
-    width: 100%;
-    height: auto;
-  }
-  .education {
-    border-radius: 10px;
-    margin-top: 50px;
-    background-color: $white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    width: 100%;
-    height: 350px;
-    .edu-yr {
-      font-size: 16px;
-    }
-    .edu-name {
-      font-weight: bold;
-    }
-    .edu-uni {
-      color: $grey;
-      font-size: 16px;
-    }
-    .edu-info {
-      font-size: 18px;
+      color: $red;
     }
   }
 }
 
 #works {
   margin-top: 200px;
-  .work1 {
-    border-radius: 10px;
-    background-color: $grey;
-    height: 350px;
+  .work-heading {
+    color: $red;
   }
-  .work2 {
-    @extend .work1;
-    height: 400px;
-  }
-  .work3 {
-    @extend .work1;
-    height: 250px;
-  }
-  .work4 {
-    @extend .work1;
-    height: 400px;
-    margin-top: -50px;
-  }
-  .work5 {
-    @extend .work1;
-  }
-  .work6 {
-    @extend .work1;
-    height: 500px;
-    margin-top: -150px;
+  .nav-pills {
+    .nav-link {
+      color: $white;
+    }
+    .nav-link.active {
+      background-color: $red;
+      color: $white;
+    }
   }
 }
-
 #contact {
-  margin-top: 300px;
+  margin-top: 200px;
+  background-color: $red;
+  padding: 100px 0;
+  @include md {
+    margin-top: 150px;
+  }
   h1 {
     margin-bottom: 10px;
+    color: $dark;
+  }
+  h5,
+  p {
+    color: $yellow;
   }
   .contact-info {
     margin-top: 50px;
     h5 {
-      font-size: 18px;
+      color: $dark;
+      font-size: 20px;
+      margin: 40px 0;
+      @include sm {
+        font-size: 18px;
+      }
     }
     .phone {
+      transition: 0.2s all;
+      margin: 20px 0;
+      a {
+        color: $dark;
+        transition: 0.2s all;
+        &:hover {
+          // color: $yellow;
+          text-decoration: none;
+        }
+      }
       img {
         width: 40px;
         height: 40px;
         margin-right: 10px;
+        &:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+        @include sm {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
     .mail {
@@ -176,32 +291,72 @@
   .contact-vector {
     width: 100%;
     height: auto;
+    @include md {
+      margin-top: 50px;
+    }
   }
 }
 
 footer {
-  padding: 80px 0;
-  margin-top: 120px;
+  padding: 100px 0;
+  margin-top: 100px;
   text-align: center;
+  @include md {
+    margin-top: 50px;
+  }
   a,
   h1 {
     font-size: 60px;
     margin: 20px 0;
-    color: $dark;
+    color: $white;
     transition: 0.2s all;
     &:hover {
-      color: $blue;
+      color: $red;
       text-decoration: none;
+    }
+    @include md {
+      font-size: 40px;
     }
   }
   .social {
-    margin-top: 50px;
+    margin-top: 20px;
+    transition: 0.2s all;
     img {
       width: 40px;
-      height: 50px;
+      height: 40px;
+      padding: 5px;
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+      }
     }
   }
   p {
     margin-top: 10px;
   }
+}
+
+/* Move-horizontal effect */
+.mfp-move-horizontal .mfp-with-anim {
+  opacity: 0;
+  transition: all 0.3s;
+  transform: translateX(-50px);
+}
+.mfp-move-horizontal.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s;
+}
+.mfp-move-horizontal.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mfp-move-horizontal.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-move-horizontal.mfp-removing .mfp-with-anim {
+  transform: translateX(50px);
+  opacity: 0;
+}
+.mfp-move-horizontal.mfp-removing.mfp-bg {
+  opacity: 0;
 }

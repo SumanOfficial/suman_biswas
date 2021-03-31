@@ -1,25 +1,44 @@
 @import "../vendors/vendors";
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background-color: $white;
+  background-color: $dark;
   font-family: "Poppins", sans-serif;
+  color: $white;
 }
 h1 {
   font-size: 50px;
   font-weight: bold;
+  @include lg {
+    font-size: 40px;
+  }
+  @include sm {
+    font-size: 30px;
+  }
 }
 h5 {
-  color: $blue;
+  color: $red;
+  @include lg {
+    font-size: 18px;
+  }
 }
 
 p {
-  color: $dark;
   font-size: 18px;
+  @include lg {
+    font-size: 16px;
+  }
 }
 .logo {
   width: 60px;
   height: 60px;
   padding: 10px;
   margin-top: 30px;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 ::-moz-selection {
@@ -51,12 +70,5 @@ p {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(0.44, rgb(101, 118, 214)),
-    color-stop(0.72, rgb(85, 98, 172)),
-    color-stop(0.86, rgb(67, 70, 105))
-  );
+  background: linear-gradient(180deg, #ef4b76 0%, #ff7096 51.56%, #ff99c8 100%);
 }
