@@ -34,9 +34,9 @@ export const styles = () => {
  * minified image
  */
 export const images = () => {
-  return src(variable.dev_img_dir + "/**/*." + variable.img_types)
+  return src(variable.dev_img_dir + "/**/*")
     .pipe(gulpif(PRODUCTION, imagemin()))
-    .pipe(gulpif(PRODUCTION, dest(variable.prod_img_dir)));
+    .pipe(gulpif(PRODUCTION, dest(variable.prod_img_dir + "/")));
 };
 
 /**
