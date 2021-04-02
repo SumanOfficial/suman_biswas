@@ -15,6 +15,26 @@ import zip from "gulp-zip";
 import info from "./package.json";
 import * as variable from "./gulp.config";
 import uglify from "gulp-uglify";
+import htmlmin from "gulp-htmlmin";
+
+/**
+ * Html Minify
+ * @returns
+ */
+export const html = () => {
+  return src("./templates/**/*.html")
+    .pipe(
+      gulpif(
+        PRODUCTION,
+        htmlmin({
+          collapseWhitespace: true,
+          collapseInlineTagWhitespace: true,
+          removeComments: true,
+        })
+      )
+    )
+    .pipe(gulpif(PRODUCTION, dest(variable.prod_dir + "/")));
+};
 
 /**
  * Style sheet
@@ -85,6 +105,7 @@ export const copy = () => {
       variable.dev_dir + "/**/*.html",
       variable.dev_dir + "/css/*.css",
       variable.dev_dir + "/js/*.min.js",
+      variable.dev_dir + "/assets/**/*",
       "!" + variable.dev_dir + "/{images,scss}",
       "!" + variable.dev_dir + "/{images,scss}/**/*",
     ],
@@ -175,7 +196,7 @@ export const dev = series(
 );
 export const build = series(
   clean,
-  parallel(styles, images, copy, scripts),
+  parallel(html, styles, images, copy, scripts),
   compress
 );
 

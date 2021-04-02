@@ -32,7 +32,6 @@
     "@babel/register": "^7.13.0",
     "autoprefixer": "^9.7.5",
     "babel-loader": "^8.2.2",
-    "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.10",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -43,19 +42,16 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-zip": "^5.0.2",
-    "jquery": "^3.6.0",
     "magnific-popup": "^1.1.0",
     "webpack-stream": "^6.1.1",
     "yargs": "^16.2.0"
   },
   "dependencies": {
-    "aos": "^3.0.0-beta.6",
-    "gulp-uglify": "^3.0.2",
-    "normalizecss": "^3.0.0",
-    "popper.js": "^1.16.1-lts"
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify": "^3.0.2"
   },
   "bugs": {
-    "url": "https://github.com/SumanOfficial/FrontendGulp/issues"
+    "url": "https://github.com/SumanOfficial/suman_biswas/issues"
   },
-  "homepage": "https://github.com/SumanOfficial/FrontendGulp#readme"
+  "homepage": "https://github.com/SumanOfficial/suman_biswas#readme"
 }

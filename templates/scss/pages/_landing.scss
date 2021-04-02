@@ -40,16 +40,20 @@
       padding: 0 50px;
     }
     @include sm {
-      margin-top: 0px;
-      // text-align: center;
-      padding: 0 50px;
+      margin-top: 20px;
+      padding: 0 15px;
     }
     .hero-text {
       margin-top: 100px;
+      @include sm {
+        text-align: left;
+        margin-top: 0px;
+      }
     }
     .hero-img {
       img {
         // margin-top: 50px;
+        text-align: center;
         width: 100%;
         height: auto;
         @include md {
@@ -57,8 +61,8 @@
           margin-top: 0;
         }
         @include sm {
-          padding: 20px;
-          margin-top: 20px;
+          padding: 15px;
+          margin-top: 10px;
         }
         @include xs {
           padding: 15px;
@@ -431,11 +435,11 @@ footer {
 
 // page loader
 
-// #page-loader {
-//   height: 100vh;
-//   width: 100%;
-//   background-color: $dark;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
+#page-loader {
+  height: 100vh;
+  width: 100%;
+  background-color: $dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

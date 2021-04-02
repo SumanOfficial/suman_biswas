@@ -1,8 +1,7 @@
-// import Aos from "aos";
-
-AOS.init({
-  duration: 900,
-  once: false,
+$(window).on("load", () => {
+  console.log("window loaded");
+  $("#page-loader").fadeOut("slow");
+  AOS.refresh();
 });
 
 // Navigation aniimation
@@ -10,6 +9,7 @@ $(() => {
   $(document).on("click", ".cta", function () {
     $(this).toggleClass("active");
     $("#mySidenav").toggleClass("sidenav-active");
+    AOS.refresh();
   });
 });
 
@@ -19,6 +19,7 @@ $("#mySidenav a").on("click", function () {
   // console.log();
   $("#mySidenav").removeClass("sidenav-active");
   $(".cta").removeClass("active");
+  AOS.refresh();
 });
 
 // Magnific Pop up
@@ -40,35 +41,3 @@ $(".popup").magnificPopup({
   //  allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   midClick: true,
 });
-
-// $(window).on("load", function () {
-//   AOS.refresh();
-// });
-
-// let op = 0;
-// let timer = 0;
-// // removeLoader custom Function
-// const removeLoader = (e) => {
-//   timer = setInterval(hideEl(e), 20);
-// };
-// const hideEl = (el) => {
-//   op = Number(window.getComputedStyle(el).getPropertyValue("opacity"));
-//   if (op > 0) {
-//     op = op - 0.1;
-//     el.style.opacity = op;
-//   } else {
-//     clearInterval(timer);
-//   }
-//   // console.log(e);
-// };
-
-// fadeout the loader
-// $(window).on("load", () => {
-//   console.log("window loaded");
-//   // const loader = document.getElementById("page-loader");
-//   // console.log(loader);
-//   // removeLoader(loader);
-//   $("#page-loader").fadeOut("slow");
-//   // AOS.refresh();
-//   // $(".loader-wrapper").addClass("remove-page-loader");
-// });
