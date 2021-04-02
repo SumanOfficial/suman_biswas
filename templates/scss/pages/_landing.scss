@@ -11,7 +11,6 @@
 #hero {
   .block {
     background: transparent !important;
-    // color: $dark;
     box-shadow: none;
     position: absolute;
     top: 3%;
@@ -46,8 +45,8 @@
     .hero-text {
       margin-top: 100px;
       @include sm {
-        text-align: left;
         margin-top: 0px;
+        padding: 20px;
       }
     }
     .hero-img {
@@ -442,4 +441,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }

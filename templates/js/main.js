@@ -1,7 +1,6 @@
 $(window).on("load", () => {
   console.log("window loaded");
   $("#page-loader").fadeOut("slow");
-  AOS.refresh();
 });
 
 // Navigation aniimation
